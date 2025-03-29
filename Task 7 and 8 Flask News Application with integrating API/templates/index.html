@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest News</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(35deg, #ff00a2, #462f7a);
+            color: #333;
+            transition: background 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background: #1a1a2e;
+            color: #e0e0e0;
+        }
+        header {
+            background: #ff005d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .news-container {
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
+            background: rgb(255, 255, 255);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .news-container:hover {
+            transform: scale(1.02);
+        }
+        .news-item {
+            border-bottom: 2px solid #ddd;
+            padding: 20px 0;
+            transition: background 0.3s;
+        }
+        .news-item:hover {
+            background: rgba(119, 0, 255, 0.1);
+        }
+        .news-item h2 {
+            font-size: 22px;
+            margin: 0;
+            color: #cc0022;
+            transition: color 0.3s;
+        }
+        .news-item h2:hover {
+            color: #ff00e6;
+        }
+        .news-item p {
+            color: #444;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .news-item a {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 8px 12px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .news-item a:hover {
+            background: #a700b3;
+        }
+        button {
+            background: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 15px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        .dark-mode .news-container {
+            background: #2a2a40;
+            color: #e0e0e0;
+        }
+        .dark-mode .news-item {
+            border-bottom: 2px solid #444;
+        }
+        .dark-mode .news-item a {
+            background: #eeff00;
+        }
+        .dark-mode .news-item a:hover {
+            background: #96e600;
+        }
+    </style>
+</head>
+<body>
+    <header>🔥 Top News Headlines 🔥</header>
+    <button onclick="toggleDarkMode()">Dark Mode</button>
+    <div class="news-container" id="news-list">
+        {% for article in news %}
+            <div class="news-item">
+                <h2>{{ article.title }}</h2>
+                <p>{{ article.description }}</p>
+                <a href="{{ article.url }}" target="_blank">Read more ➜</a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+</body>
+</html>
