@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>🎓 University InfoBot</title>
+  <style>
+    :root {
+      --bg-light: #f0f4f8;
+      --bg-dark: #1e1e2f;
+      --card-light: #ffffff;
+      --card-dark: #2e2e3e;
+      --text-light: #000;
+      --text-dark: #fff;
+      --primary: #0055a5;
+      --primary-light: #66aaff;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-light);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .dark-mode {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .chat-container {
+      background: var(--card-light);
+      width: 400px;
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.3s;
+    }
+
+    .dark-mode .chat-container {
+      background: var(--card-dark);
+    }
+
+    .header {
+      background-color: var(--primary);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .chatbox {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      height: 400px;
+    }
+
+    .input-area {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 15px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+      background: transparent;
+      color: inherit;
+    }
+
+    button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .toggle-mode {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
+    .dark-mode .toggle-mode {
+      background: #444;
+      color: white;
+    }
+
+    .message {
+      margin: 10px 0;
+    }
+
+    .user {
+      text-align: right;
+      color: var(--text-light);
+    }
+
+    .bot {
+      text-align: left;
+      color: var(--primary);
+    }
+
+    .dark-mode .user {
+      color: var(--text-dark);
+    }
+
+    .dark-mode .bot {
+      color: var(--primary-light);
+    }
+  </style>
+</head>
+<body id="body">
+  <div class="chat-container">
+    <div class="header">🎓 University InfoBot</div>
+    <div class="chatbox" id="chatbox"></div>
+    <div class="input-area">
+      <input id="userInput" type="text" placeholder="Ask me anything about the university..." onkeypress="if(event.key === 'Enter') sendMessage()">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <button class="toggle-mode" onclick="toggleMode()">Dark Mode</button>
+
+  <script>
+    function sendMessage() {
+      var userInput = document.getElementById("userInput").value.trim();
+      if (userInput === "") return;
+
+      var chatbox = document.getElementById("chatbox");
+      chatbox.innerHTML += `<div class='message user'><strong>You:</strong> ${userInput}</div>`;
+
+      fetch("/get?msg=" + encodeURIComponent(userInput))
+        .then(response => response.json())
+        .then(data => {
+          chatbox.innerHTML += `<div class='message bot'><strong>Bot:</strong> ${data.response}</div>`;
+          chatbox.scrollTop = chatbox.scrollHeight;
+        });
+
+      document.getElementById("userInput").value = "";
+    }
+
+    function toggleMode() {
+      document.getElementById("body").classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+</html>

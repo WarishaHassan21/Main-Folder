@@ -1,0 +1,47 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": ["hello", "hi", "hey", "hye", "hy", "good morning", "good evening", "what's up", "how are you"],
+        "responses": ["Hello! Welcome to University InfoBot. How can I assist you today?"]
+      },
+      {
+        "tag": "university_info",
+        "patterns": ["what information do you provide", "what can you tell me", "info about university", "what is the info you can give me", "tell me about university", "what services do you offer"],
+        "responses": [
+          "I can help you with information about admissions, courses, departments, fees, and contact details. What would you like to know more about?"
+        ]
+      },
+      {
+        "tag": "admissions",
+        "patterns": ["how to apply", "admission process", "apply for university", "get admission", "what are the admission requirements"],
+        "responses": ["You can apply through our online portal. Visit university.edu/apply for more information."]
+      },
+      {
+        "tag": "courses",
+        "patterns": ["what courses", "programs offered", "available degrees", "majors", "study options", "bachelor's programs", "master's programs"],
+        "responses": ["We offer undergraduate and postgraduate programs in Science, Arts, Engineering, Business, and more."]
+      },
+      {
+        "tag": "departments",
+        "patterns": ["departments", "faculties", "schools in university", "list of departments"],
+        "responses": ["Our university has departments such as Computer Science, Biology, Economics, Psychology, and more."]
+      },
+      {
+        "tag": "fees",
+        "patterns": ["tuition fees", "cost", "how much", "fee structure", "how much does it cost"],
+        "responses": ["Tuition varies by program. Undergraduate programs start from $10,000 per year. Check our website for details."]
+      },
+      {
+        "tag": "contact",
+        "patterns": ["how to contact", "university phone number", "email", "support", "who can I reach out to"],
+        "responses": ["You can contact us at info@university.edu or call +1-800-UNI-INFO."]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["bye", "goodbye", "see you", "thanks", "thank you"],
+        "responses": ["Goodbye! Feel free to ask more questions anytime."]
+      }
+    ]
+  }
+  
