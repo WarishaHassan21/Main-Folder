@@ -1,0 +1,76 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "responses": [
+        "Hello! Welcome to University InfoBot. How can I assist you today?",
+        "Hi there! Looking for university info? I'm here to help.",
+        "Hey! Need details about admissions, courses, or something else?",
+        "Good to see you! How can I support your academic journey?"
+      ]
+    },
+    {
+      "tag": "university_info",
+      "responses": [
+        "I can help you with information about admissions, courses, departments, fees, and contact details. What would you like to know more about?",
+        "You can ask me about anything related to the university — from academics to support services.",
+        "Need help with admissions, departments, or tuition? Just let me know!",
+        "I provide details about the university's offerings. What would you like help with first?"
+      ]
+    },
+    {
+      "tag": "admissions",
+      "responses": [
+        "You can apply through our online portal. Visit university.edu/apply for more information.",
+        "Admissions are open! Check out the requirements and start your application on our official site.",
+        "Our application process is simple and fully online. Visit the admissions section for deadlines and documents.",
+        "To join the university, you’ll need to submit an online application along with transcripts and test scores if applicable."
+      ]
+    },
+    {
+      "tag": "courses",
+      "responses": [
+        "We offer undergraduate and postgraduate programs in Science, Arts, Engineering, Business, and more.",
+        "Explore a wide range of degree programs including BSc, BA, MBA, MTech, and more.",
+        "Our curriculum includes flexible options across various faculties and interdisciplinary studies.",
+        "From Computer Science to Fine Arts, we’ve got a program that matches your passion."
+      ]
+    },
+    {
+      "tag": "departments",
+      "responses": [
+        "Our university has departments such as Computer Science, Biology, Economics, Psychology, and more.",
+        "Explore diverse departments including Engineering, Medicine, Social Sciences, and Humanities.",
+        "Each department is equipped with expert faculty and modern research facilities.",
+        "Departments are organized into faculties that focus on specific academic disciplines."
+      ]
+    },
+    {
+      "tag": "fees",
+      "responses": [
+        "Tuition varies by program. Undergraduate programs start from $10,000 per year. Check our website for details.",
+        "Costs depend on the course and level of study. Visit the fee section for a full breakdown.",
+        "We offer competitive tuition rates along with scholarships and financial aid options.",
+        "International and domestic fees may differ. Visit our fee calculator for accurate estimates."
+      ]
+    },
+    {
+      "tag": "contact",
+      "responses": [
+        "You can contact us at info@university.edu or call +1-800-UNI-INFO.",
+        "For support, email our team or connect via the live chat on our website.",
+        "Need help? Reach out through our contact form or phone line for prompt assistance.",
+        "Our admissions office is always ready to assist you. Drop us a message anytime!"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "responses": [
+        "Goodbye! Feel free to ask more questions anytime.",
+        "Take care! Reach out if you need any more help.",
+        "Wishing you the best with your university plans!",
+        "Thanks for visiting. Come back anytime for more information!"
+      ]
+    }
+  ]
+}
